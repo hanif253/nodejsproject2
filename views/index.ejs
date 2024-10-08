@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog management system</title>
+</head>
+<body>
+    <h1>BLOG MANAGEMENT SYSTEM</h1>
+    <a href="/posts/new">Create New post</a>
+    <ul>
+        <% posts.forEach(function(post){%>
+            <li>
+                <a href="/post/<%=post.id%>"><strong><%=post.title %></strong></a>
+
+                
+                <form action="/posts/<%=post.id %>/delete" method="post" style="display:inline;">
+                    
+
+                        <button type="submit">Delete</button>
+                        
+                    </form>
+
+            </li>
+            <%})%>
+    </ul>
+    
+</body>
+</html>
